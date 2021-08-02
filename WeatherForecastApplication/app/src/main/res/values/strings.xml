@@ -1,4 +1,0 @@
-<resources>
-    <string name="app_name">WeatherForecastApplication</string>
-    <string name="details_message">Weather details are as below: \n City =%s \n Humidity = %d \n Pressure = %d \n Sunrise = %s \n Sunset = %s \n Temp = %.2f \n TempMax = %.2f \n TempMin = %.2f \n WindSpeed = %.2f \n Description = %s \n LastUpdated = %s</string>
-</resources>
