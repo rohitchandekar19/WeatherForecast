@@ -1,7 +1,5 @@
 # Weather forecasting application
 
-***
-
 Weather, everybody wants to know how it is going to be during a complete day. Will it be rainy,
 windy, or sunny? Luckily for us, in the information age, there are open APIs to retrieve information
 about it.
@@ -20,11 +18,7 @@ following information,
 7. Wind speed
 8. Last updated at (This is the timestamp of collecting the weather status)
 
-***
-
 ## Technical perspective
-
-***
 
 In this application, I used the following tech stack,
 
@@ -39,12 +33,9 @@ In this application, I used the following tech stack,
 9. WorkManager
 10. OkHttp
 
-***
-
 ## Architecture
 
-***
-In this application, I used the MVVM archhitecture
+In this application, I used the MVVM architecture
 
 ## Upcoming features
 
