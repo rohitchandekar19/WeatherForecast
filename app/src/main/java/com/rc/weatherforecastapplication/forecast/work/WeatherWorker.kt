@@ -26,7 +26,7 @@ class WeatherWorker @AssistedInject constructor(
         try {
             CoroutineScope(Dispatchers.IO).launch {
                 Log.d("WorkManager", "Work manager called.")
-                weatherRepository.getWeatherConditionsOfLocation(null)
+                weatherRepository.getWeatherConditionsOfLocation(null, true)
             }
         } catch (e: Exception) {
             return Result.retry()

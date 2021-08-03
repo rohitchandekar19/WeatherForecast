@@ -19,5 +19,8 @@ data class Weather(
     @ColumnInfo(name = "temp") val temp: Double,
     @ColumnInfo(name = "tempMax") val tempMax: Double,
     @ColumnInfo(name = "tempMin") val tempMin: Double,
-    @ColumnInfo(name = "lastUpdatedAt") val lastUpdatedAt: Long
+    @ColumnInfo(name = "lastUpdatedAt") val lastUpdatedAt: Long,
+    @ColumnInfo(name = "country") val country: String,
+    @ColumnInfo(name = "icon") val icon: String,
+    @ColumnInfo(name = "status") val status: String
 )

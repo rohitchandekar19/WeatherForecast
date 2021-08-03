@@ -11,7 +11,7 @@ interface WeatherDao {
     @Query("SELECT * FROM Weather")
     suspend fun getWeatherInfoOfLocation(): Weather?
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(weather: Weather)
 
     @Query("DELETE FROM Weather")

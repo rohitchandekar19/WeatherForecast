@@ -5,7 +5,7 @@ import com.rc.weatherforecastapplication.forecast.data.network.responsemodel.Wea
 import javax.inject.Inject
 
 class WeatherResponseMapper @Inject constructor() {
-    fun mapToViewModel(weatherReport: WeatherResponseEntity): Weather {
+    fun mapToEntityModel(weatherReport: WeatherResponseEntity): Weather {
         return Weather(
             weatherReport.name,
             weatherReport.coord.lat,
@@ -20,7 +20,10 @@ class WeatherResponseMapper @Inject constructor() {
             weatherReport.main.temp,
             weatherReport.main.tempMax,
             weatherReport.main.tempMin,
-            weatherReport.dt
+            weatherReport.dt,
+            weatherReport.sys.country,
+            weatherReport.weather[0].icon,
+            weatherReport.weather[0].main
         )
     }
 }

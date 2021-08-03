@@ -16,6 +16,7 @@ class WhetherService @Inject constructor(private val weatherApi: WeatherApi) {
         queryMap["lat"] = latitude.toString()
         queryMap["lon"] = longitude.toString()
         queryMap["appid"] = "fae7190d7e6433ec3a45285ffcf55c86"
+        queryMap["units"] = "metric"
         return queryMap
     }
 }

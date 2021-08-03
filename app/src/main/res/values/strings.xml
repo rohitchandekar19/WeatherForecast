@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">WeatherForecastApplication</string>
     <string name="details_message">Weather details are as below: \n City =%s \n Humidity = %d \n Pressure = %d \n Sunrise = %s \n Sunset = %s \n Temp = %.2f \n TempMax = %.2f \n TempMin = %.2f \n WindSpeed = %.2f \n Description = %s \n LastUpdated = %s</string>
+    <string name="permission_retry_text">Location permission is needed to work application.</string>
+    <string name="permission_setting_text">Location permission is needed to work application, please retry after giving Location permission</string>
+    <string name="on_denied_error_message">Location permission is required for this application to run</string>
+    <string name="mandatory_permission_explanation_text">You need to give mandatory location permission to continue. Do you want to go to app settings?</string>
+    <string name="failure_text">Unable to get weather status, please try after sometime.</string>
 </resources>
