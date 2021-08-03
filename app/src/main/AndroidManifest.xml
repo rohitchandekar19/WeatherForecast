@@ -26,9 +26,21 @@
         </activity>
 
         <provider
+            android:exported="false"
             android:name="androidx.work.impl.WorkManagerInitializer"
             android:authorities="${applicationId}.workmanager-init"
             tools:node="remove" />
+
+        <service
+            android:name="androidx.work.multiprocess.RemoteWorkManagerService"
+            tools:replace="android:process"
+            android:process=":second_process"/>
+
+        <service
+            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+            tools:replace="android:process"
+            android:process=":second_process"/>
+
     </application>
 
 </manifest>
