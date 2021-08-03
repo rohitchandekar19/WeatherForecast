@@ -7,11 +7,13 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.bumptech.glide.Glide
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.rc.weatherforecastapplication.R
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        actionBar?.hide()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         obtainCurrentLocation()
         observerWeatherConditions()
@@ -68,24 +71,20 @@ class MainActivity : AppCompatActivity() {
     private fun observerWeatherConditions() {
         weatherViewModel.weatherLiveData.observe(this, { weather ->
             if (weather == null) {
-                binding.weatherTextView.text =
-                    getString(R.string.failure_text)
+                Toast.makeText(this, getString(R.string.generic_error), Toast.LENGTH_LONG).show()
             } else {
-                binding.weatherTextView.text =
-                    getString(
-                        R.string.details_message,
-                        weather.city,
-                        weather.humidity,
-                        weather.pressure,
-                        weather.sunrise.getDisplayDateTime(),
-                        weather.sunset.getDisplayDateTime(),
-                        weather.temp,
-                        weather.tempMax,
-                        weather.tempMin,
-                        weather.windSpeed,
-                        weather.description,
-                        weather.lastUpdatedAt.getDisplayDateTime()
-                    )
+                Glide.with(this).load(STATUS_URI.plus(weather.icon))
+                    .into(binding.statusImageView)
+                binding.cityNameTextView.text = weather.city.plus(", ${weather.country}")
+                binding.humidityTextView.text = getString(R.string.humidity_text, weather.humidity)
+                binding.windTextView.text = getString(R.string.wind_speed_text, weather.windSpeed)
+                binding.pressureTextView.text = getString(R.string.pressure_text, weather.pressure)
+                binding.temperatureTextView.text = getString(R.string.temp_text, weather.temp)
+                binding.maxTempTextView.text = getString(R.string.temp_text, weather.tempMax)
+                binding.minTempTextView.text = getString(R.string.temp_text, weather.temp)
+                binding.descriptionTextView.text = weather.description
+                binding.feelsLikeTextView.text = getString(R.string.temp_text, weather.feelsLike)
+                binding.dateTextView.text = weather.lastUpdatedAt.getDisplayDateTime()
             }
         })
     }
@@ -135,5 +134,9 @@ class MainActivity : AppCompatActivity() {
                     weatherViewModel.getWeatherConditionsOfLocation(it)
                 }
         }
+    }
+
+    companion object {
+        private const val STATUS_URI = "http://api.openweathermap.org/img/w/"
     }
 }

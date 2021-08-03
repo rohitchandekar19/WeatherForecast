@@ -23,7 +23,8 @@ class WeatherResponseMapper @Inject constructor() {
             weatherReport.dt,
             weatherReport.sys.country,
             weatherReport.weather[0].icon,
-            weatherReport.weather[0].main
+            weatherReport.weather[0].main,
+            weatherReport.main.feelsLike
         )
     }
 }

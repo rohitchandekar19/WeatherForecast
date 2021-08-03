@@ -22,5 +22,6 @@ data class Weather(
     @ColumnInfo(name = "lastUpdatedAt") val lastUpdatedAt: Long,
     @ColumnInfo(name = "country") val country: String,
     @ColumnInfo(name = "icon") val icon: String,
-    @ColumnInfo(name = "status") val status: String
+    @ColumnInfo(name = "status") val status: String,
+    @ColumnInfo(name = "feelsLike") val feelsLike: Double
 )

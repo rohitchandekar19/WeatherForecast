@@ -6,4 +6,12 @@
     <string name="on_denied_error_message">Location permission is required for this application to run</string>
     <string name="mandatory_permission_explanation_text">You need to give mandatory location permission to continue. Do you want to go to app settings?</string>
     <string name="failure_text">Unable to get weather status, please try after sometime.</string>
+    <string name="humidity_text">%d %%</string>
+    <string name="wind_speed_text">%.0f km/h</string>
+    <string name="pressure_text">%d mb</string>
+    <string name="temp_text">%.0f \u2103</string>
+    <string name="max_temp">Max temp</string>
+    <string name="feels_like">Feels like</string>
+    <string name="min_temp">Min temp</string>
+    <string name="generic_error">Unable to show weather forecast</string>
 </resources>

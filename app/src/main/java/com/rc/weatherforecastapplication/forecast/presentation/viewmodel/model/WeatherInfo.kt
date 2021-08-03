@@ -21,5 +21,6 @@ data class WeatherInfo(
     val lastUpdatedAt: Long,
     val country: String,
     val icon: String,
-    val status: String
+    val status: String,
+    val feelsLike: Double
 ) : Parcelable

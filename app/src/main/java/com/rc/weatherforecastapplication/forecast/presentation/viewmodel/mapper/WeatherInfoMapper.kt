@@ -23,6 +23,7 @@ class WeatherInfoMapper @Inject constructor() {
             weatherData.lastUpdatedAt,
             weatherData.country,
             weatherData.icon,
-            weatherData.status
+            weatherData.status,
+            weatherData.feelsLike
         )
 }
