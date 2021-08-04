@@ -23,7 +23,7 @@ class WeatherViewModel @Inject constructor(private val weatherRepository: Weathe
     /**
      * This is used to fetch the weather status of the given location
      */
-    fun getWeatherConditionsOfLocation(location: Location) {
+    fun getWeatherConditionsOfLocation(location: Location?) {
         viewModelScope.launch {
             val weather = weatherRepository.getWeatherConditionsOfLocation(location, false)
             withContext(Dispatchers.Main) {
